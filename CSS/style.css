@@ -1,0 +1,87 @@
+.carousel-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 20;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    text-align: end;
+    margin-right: 120px;
+}
+
+#ba1 , #ba2 , #ba3{
+    filter: brightness(50%);
+}
+
+.btn-outline-primary{
+    border-color: white !important;
+    color: white;
+}
+.btn-outline-primary:hover{
+    background-color: white !important;
+    color: black !important;
+}
+
+.botonJS{
+    background-color: #ffc007;
+    border-color: #ffc007;
+    color: black;
+    font-weight: bold;
+}
+
+.botonReact{
+    background-color: #17a2b9;
+    border-color: #17a2b9;
+}
+
+#botonNegocios , #botonStartUp , .botonReact {
+    color:white;
+    font-weight: bold;
+}
+#botonNegocios{
+    background-color: #6c757e;
+    border-color: #6c757e;
+}
+
+#botonStartUp{
+    background-color: #dc3546;
+    border-color: #dc3546;
+}
+
+#imgHonolulu{
+    padding-right: 2px;
+}
+
+#infoHonolulu{
+    padding: 10px 20px;
+    background:#353a40; 
+    color: white;
+    font-size: 14px; 
+}
+
+#botonEnviar{
+    background-color: #96c93e;
+    color:white;
+    border-color: #96c93e;
+}
+
+a{
+text-decoration: none;
+color: white;
+
+}
+
+.footerBA{
+    background: rgb(22,43,54);
+    background: linear-gradient(90deg, rgba(22,43,54,1) 0%, rgba(29,76,105,1) 100%);
+}
+
+#charlaIgnite{
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    color: black !important;
+}
+
+.row{
+    margin-right: 5px;
+}
