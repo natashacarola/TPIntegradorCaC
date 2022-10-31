@@ -99,6 +99,7 @@
                         <img src="img/steve.jpg" class="card-img-top" alt="Steve Jobs">
                         <div class="card-body">
                             <button type="button" class="btn btn-primary botonJS" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;"> JavaScript </button>
+                            <span class="badge text-bg-warning">JavaScript</span>
                             <button type="button" class="btn btn-primary botonReact" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;"> React </button>
                             <h5 class="card-title">Steve Jobs</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque nostrum dolore quaerat. Ex, quia, neque temporibus dolorem nobis corporis adipisci debitis numquam necessitatibus, iusto quos! Ipsum enim necessitatibus sequi?</p>
@@ -118,7 +119,7 @@
                 </div>
                 <div class="col-xl-4 d-flex justify-content-center">
                     <div class="card" style="width: 20rem;">
-                        <img src="img/ada.jpeg" class="card-img-top" alt="Ada Lovelace">
+                        <img src="img/ada.jpg" class="card-img-top" alt="Ada Lovelace">
                         <div class="card-body">
                             <button type="button" class="btn btn-primary" id="botonNegocios" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;"> Negocios</button>
                             <button type="button" class="btn btn-primary " id="botonStartUp" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;"> Startups </button>
@@ -142,8 +143,8 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-xl-6">
-            <p style="text-align: center; font-size: 12px;">CONVIÉRTETE EN UN </p>
-            <h2 style="text-align: center;">ORADOR</h2>
+            <p style="text-align: center; font-size: 14px;">CONVIÉRTETE EN UN </p>
+            <h3 style="text-align: center;">ORADOR</h3>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -151,33 +152,128 @@
             <div class="row">
                 <p style="text-align: center; font-size: 14px;">Anotate como orador para dar una <a href="#" id="charlaIgnite">charla ignite</a>. Cuéntanos de qué quieres hablar!</p>
                 <div class="col-xl-6">
-                    <div class="mb-3 ms-3">
+                    <div class="mb-3">
                         <label for="Nombre" class="form-label"></label>
                         <input type="text" class="form-control" id="NombreForm" placeholder="Nombre">
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <div class="mb-3 ms-3">
+                    <div class="mb-3">
                         <label for="Apellido" class="form-label"></label>
                         <input type="text" class="form-control" id="ApellidoForm" placeholder="Apellido">
                       </div>
                 </div>
                 <div class="col-xl-12">
-                    <div class="mb-3 ms-3">
+                    <div class="mb-3 ">
                         <div class="mb-3 ">
                             <label for="CharlaOrador" class="form-label"></label>
                             <textarea class="form-control" id="CharlaOradorForm" rows="4" placeholder="Sobre qué quieres hablar?"></textarea>
                         </div>
                     </div>
-                    <p style="font-size: 12px; color:gray; margin-left: 20px;">Recuerda incluir un titulo para tu charla</p>
+                    <p style="font-size: 12px; color:gray; margin-left: 5px;">Recuerda incluir un titulo para tu charla</p>
                 </div>
-                <div class="col-xl-12 d-grid gap-2 ms-3">
+                <div class="col-xl-12 d-grid gap-2 ">
                     <button class="btn btn-primary" type="submit" id="botonEnviar">Enviar</button>
                   </div>
             </div>
         </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-8">
+            <div class="row">
+                <div class="col-xl-4 d-flex justify-content-center" >
+                    <div class="card text-center border-primary mb-3 mt-3 categorias" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Estudiante</h5>
+                            <p class="card-text">Tienen un descuento</p>
+                            <p class="card-text" style="font-weight: bold;">80%</p>
+                            <p class="card-text" style="font-size: 12px; color: grey;">*presentar documentación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-flex justify-content-center">
+                    <div class="card text-center border-success mb-3 mt-3 categorias" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Trainee</h5>
+                            <p class="card-text">Tienen un descuento</p>
+                            <p class="card-text" style="font-weight: bold;">50%</p>
+                            <p class="card-text" style="font-size: 12px; color: grey;">*presentar documentación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-flex justify-content-center">
+                    <div class="card text-center border-warning mb-3 mt-3 categorias" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Junior</h5>
+                            <p class="card-text">Tienen un descuento</p>
+                            <p class="card-text" style="font-weight: bold;">15%</p>
+                            <p class="card-text" style="font-size: 12px; color: grey;">*presentar documentación</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-12 my-3">
+            <p style="text-align: center; font-size: 14px" >VENTA</p>
+            <h3 style="text-align: center;">VALOR DE TICKET $200</h3>
+        </div>
+        <div class="col-xl-8">
+            <form action="#">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="mb-1">
+                            <label for="Nombre" class="form-label"></label>
+                            <input type="text" class="form-control" id="NombreForm" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="mb-1">
+                            <label for="Apellido" class="form-label"></label>
+                            <input type="text" class="form-control" id="ApellidoForm" placeholder="Apellido">
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label"></label>
+                            <input type="text" class="form-control" id="CorreoForm" placeholder="Correo">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="mb-3">
+                            <label for="Cantidad" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" id="CantidadForm" placeholder="Cantidad">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="mb-3">
+                            <label for="TipoDescuento" class="form-label">Categoria</label>
+                            <select class="form-select" id="descuento" aria-label="Default select example">
+                                <option value="1" selected>Estudiante</option>
+                                <option value="2">Trainee</option>
+                                <option value="3">Junior</option>
+                                <option value="4">Ninguno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="alert alert-primary my-2"  role="alert">
+                            <p id="totalaPagar">Total a pagar:$ </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 d-grid gap-2 my-3">
+                        <button class="btn btn-primary" type="reset" id="botonBorrar">Borrar</button>
+                    </div>
+                    <div class="col-xl-6 d-grid gap-2 my-3">
+                        <button class="btn btn-primary" type="submit" id="botonResumen" onclick="calcular();">Resumen</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>    
+
     </main>
 
     <footer>
@@ -210,5 +306,32 @@
         </div>
    </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>    
+<script>
+    function calcular(){
+        cantidadTickets =  document.getElementById("CantidadForm").value;
+        let select  = document.getElementById("descuento");
+        let select_activa = select.options[select.selectedIndex].value;
+
+        resultado = 0;
+
+        switch(select_activa = parseInt(select_activa)){
+            case 1:
+                resultado = (parseInt(cantidadTickets)*200)*0.2;
+                break;
+            case 2: 
+                resultado = (parseInt(cantidadTickets)*200)*0.5;
+                break;
+            case 3:
+                resultado = (parseInt(cantidadTickets)*200)*0.85;
+                break;
+            case 4:
+                resultado = (parseInt(cantidadTickets)*200);
+                break;
+        }
+        // ***** aca tengo que asignar resultado a la parte donde quiero q se vea en la pantalla *****
+        // document.getElementById("totalaPagar").textContent = 'Total a pagar'
+        document.getElementById("totalaPagar").innerHTML = "Total a pagar : $ " + resultado; 
+    }
+</script>
 </body>
 </html>
