@@ -226,25 +226,25 @@
                     <div class="col-xl-6">
                         <div class="mb-1">
                             <label for="Nombre" class="form-label"></label>
-                            <input type="text" class="form-control" id="NombreForm" placeholder="Nombre" required >
+                            <input type="text" class="form-control" id="NombreFormulario" placeholder="Nombre" required >
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="mb-1">
                             <label for="Apellido" class="form-label"></label>
-                            <input type="text" class="form-control" id="ApellidoForm" placeholder="Apellido" required>
+                            <input type="text" class="form-control" id="ApellidoFormulario" placeholder="Apellido" required>
                         </div>
                     </div>
                     <div class="col-xl-12">
                         <div class="mb-3">
                             <label for="correo" class="form-label"></label>
-                            <input type="text" class="form-control" id="CorreoForm" placeholder="Correo" required>
+                            <input type="text" class="form-control" id="CorreoFormulario" placeholder="Correo" required>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="mb-3">
                             <label for="Cantidad" class="form-label">Cantidad</label>
-                            <input type="number" class="form-control" id="CantidadForm" placeholder="Cantidad" required>
+                            <input type="number" min="1" class="form-control" id="CantidadFormulario" placeholder="Cantidad" required>
                         </div>
                     </div>
                     <div class="col-xl-6">
@@ -259,12 +259,12 @@
                         </div>
                     </div>
                     <div class="col-xl-12">
-                        <div class="alert alert-primary my-2"  role="alert">
+                        <div class="alert alert-primary my-2" id="contenedorDeResultados" role="alert">
                             <p id="totalaPagar"></p>
                         </div>
                     </div>
                     <div class="col-xl-6 d-grid gap-2 my-3">
-                        <button class="btn btn-primary" type="reset" id="botonBorrar">Borrar</button>
+                        <button class="btn btn-primary" type="reset" id="botonBorrar" onclick="botonReset();">Borrar</button>
                     </div>
                     <div class="col-xl-6 d-grid gap-2 my-3">
                         <button class="btn btn-primary" type="submit" id="botonResumen" onclick="calcular();">Resumen</button>
@@ -311,25 +311,15 @@
     function calcular(){
         let select  = document.getElementById("descuento");
         let select_activa = select.options[select.selectedIndex].value;
-
-        resultado = 0;
+        let resultado = 0;
         const valorEntrada = 200;
         
         let descuento_Estudiante = 0.2;
         let descuento_Trainee = 0.5;
         let descuento_Junior = 0.85;
 
-        //INFORMACION DEL FORMULARIO
-
-        nombre_formulario = document.getElementById("NombreForm");
-        cantidadTickets_formulario = document.getElementById("CantidadForm");
-        categoria_formulario = document.getElementById("descuento");
-
-      
-        if (cantidadTickets_formulario <1 || isNaN(cantidadTickets_formulario.value)){
-            alert("Seleccione una cantidad de tickets mayor a 1");
-            cantidadTickets_formulario.focus();
-        }
+        quitarClaseError();
+        let esValido= validacionFormulario();
 
         switch(select_activa = parseInt(select_activa)){
             case 1:
@@ -345,11 +335,69 @@
                 resultado = (parseInt(cantidadTickets)*valorEntrada);
                 break;
         }
-        document.getElementById("totalaPagar").innerHTML = "Total a pagar : $ " + resultado; 
-    
-        //hacer una funcion para validar datos correctos e implementarla en la funcion de calculo, acomodar las variables y constantes arriba de todo para separar y que quede prolijo buenanoche
+        
+        if(cantidadTickets_formulario.value !=='' && esValido){
+            contenedorDeResultados.style.visibility = 'visible';
+            document.getElementById("totalaPagar").innerHTML = "Total a pagar : $ " + resultado; 
+        }
     
     }
+
+    function validacionFormulario(){
+
+        //INFORMACION DEL FORMULARIO
+ 
+        nombre_formulario = document.getElementById("NombreFormulario");
+        cantidadTickets_formulario = document.getElementById("CantidadFormulario");
+        apellido_formulario = document.getElementById("ApellidoFormulario");
+        correo_formulario = document.getElementById("CorreoFormulario");
+        formularioValido  = true;
+
+        const emailValido = correo_formulario => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo_formulario);
+
+        if (nombre_formulario.value === '' ){        
+            nombre_formulario.classList.add("is-invalid");
+            nombre_formulario.focus();
+            formularioValido = formularioValido && false;
+        } 
+
+        if(!emailValido(correo_formulario.value)){
+            correo_formulario.classList.add("is-invalid");
+            correo_formulario.focus();
+            formularioValido = formularioValido && false;
+        }
+
+
+
+        if(apellido_formulario.value ===''){
+            apellido_formulario.classList.add("is-invalid");
+            apellido_formulario.focus();
+            formularioValido = formularioValido && false;
+        }
+
+        if(isNaN(cantidadTickets_formulario.value) || cantidadTickets_formulario.value ===''){   
+            cantidadTickets_formulario.classList.add("is-invalid");
+            cantidadTickets_formulario.focus();
+            formularioValido = formularioValido && false;
+        }
+        return formularioValido;
+    }
+
+    function quitarClaseError(){
+        let x = document.querySelectorAll(".form-control , .form-select");
+
+        for (let i = 0 ; i < x.length ; i++){
+            x[i].classList.remove("is-invalid");
+        }
+    }
+
+    function botonReset(){
+        quitarClaseError();
+        document.getElementById("totalaPagar").innerHTML = ""; 
+        contenedorDeResultados.style.visibility = 'hidden';
+    }
+
+
 </script>
 </body>
 </html>
